@@ -1,0 +1,29 @@
+.list {
+  margin: 75px;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  border-bottom: 1px solid silver;
+}
+
+.item__info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.item__options {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
