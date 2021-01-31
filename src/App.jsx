@@ -62,7 +62,6 @@ function App() {
       };
     }));
   }
-  console.log(userList);
 
   const addNewUser = (fname, lname, email, phone, address) => {
     const newUser = {

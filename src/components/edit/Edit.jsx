@@ -18,19 +18,19 @@ const useStyles = makeStyles((theme) => ({
     width: '350px'
   },
   button: {
+    width: '100px',
     background: '#6200EE',
   },
   container: {
     display: 'flex',
     justifyContent: 'space-around',
-    width: '200px'
+    width: '250px'
   }
 }));
 
 function Edit ({editUser, deleteUser, userList}) {
   const {id} = useParams();
   const user = userList.find(el => el._id === id)
-  console.log('userList', user);
   const [fname, setfName] = useState(user?.fname || '');
   const [email, setEmail] = useState(user?.email || '');
   const [phone, setPhone] = useState(user?.phone || '');
