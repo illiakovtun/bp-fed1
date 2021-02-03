@@ -20,7 +20,7 @@ function List({userList, deleteUser}) {
         {userList.map(user => (
           <li key={user._id} className="item">
             <div className="item__info">
-              <p>{`${user.fname || "hidden"} ${user.lname || ''}`}</p>
+              <p>{`${user.fname || "test"} ${user.lname || ''}`}</p>
               <p>{`${user.email} | ${user.phone}`}</p>
               <p>{`${user.address}`}</p>
             </div>

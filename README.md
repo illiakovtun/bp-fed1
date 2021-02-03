@@ -1,5 +1,4 @@
-Instructions:
-
+- Instructions:
   - Open app
   - In terminal enter "npm install"
   - Run "npm run server"

@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import Maps from '../../helpers/Maps';
+import Img from '../../img/investigate.svg';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,11 +17,28 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   input: {
-    width: '350px'
+    width: '460px'
+  },
+  input__search: {
+    width: '350px',
+    position: 'relative'
   },
   button: {
     background: '#6200EE',
   },
+  search : {
+    position: 'absolute',
+    bottom: '12px',
+    left: '350px',
+    width: '45px',
+    height: '45px',
+    backgroundImage: `url(${Img})`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    border: '0',
+    background: '#eaeaea'
+  }
 }));
 
 function Create ({addNewUser}) {
@@ -29,6 +48,7 @@ function Create ({addNewUser}) {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
+  const [visitMap, setVisitMap] = useState(false);
   const router = useHistory();
 
   const handleNameChange = (event) => {
@@ -106,12 +126,24 @@ function Create ({addNewUser}) {
           value={address}
           onChange={handleAddressChange}
         />
+        <div className={classes.input__search}>
+          <button
+            className={classes.search}
+            onClick={() => setVisitMap(true)}
+          >
+          </button>
+        </div>
           <Button
             type="submit"
             className={classes.button}
           >
             SAVE
           </Button>
+          {visitMap &&
+          <Maps
+          setAddress={setAddress}
+          address={address}
+        />}
     </form>
   )
 }
